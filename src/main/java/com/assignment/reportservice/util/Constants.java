@@ -42,6 +42,8 @@ public final class Constants {
 	
 	public static final String DESCRIPTION = "description";
 	
-	public static final String AVAILABLE_AMOUNT = "availableAmount"; 
+	public static final String AVAILABLE_AMOUNT = "availableAmount";
+
+	public static final String ACCOUNT_STATE_CHANGE_LISTENER = "account-state-change-queue"; 
   
 }

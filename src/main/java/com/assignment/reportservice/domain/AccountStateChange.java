@@ -123,14 +123,5 @@ public class AccountStateChange {
 	public void setCurrencyWalletStates(List<CurrencyWalletState> currencyWalletStates) {
 		this.currencyWalletStates = currencyWalletStates;
 	}
-	
-	@Override
-	public String toString() {
-		return "AccountStateChange [customerId=" + customerId + ", accountId=" + accountId + ", country=" + country
-				+ ", balance=" + balance + ", currencyWalletStates=" + currencyWalletStates + ", transactionId="
-				+ transactionId + ", transactionAmount=" + transactionAmount + ", transactionCurrencyId="
-				+ transactionCurrencyId + ", transactionExchangeRate=" + transactionExchangeRate + ", direction="
-				+ direction + ", description=" + description + ", availableAmount=" + availableAmount + "]";
-	}
 
 }

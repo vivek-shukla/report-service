@@ -51,10 +51,4 @@ public class CurrencyWalletState {
 	public void setInverseExchangeRate(Double inverseExchangeRate) {
 		this.inverseExchangeRate = inverseExchangeRate;
 	}
-	
-	@Override
-	public String toString() {
-		return "CurrencyWalletState [currencyId=" + currencyId + ", currency=" + currency + ", balance=" + balance
-				+ ", exchangeRate=" + exchangeRate + ", inverseExchangeRate=" + inverseExchangeRate + "]";
-	}
 }
