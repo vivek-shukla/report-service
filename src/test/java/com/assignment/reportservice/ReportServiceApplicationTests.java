@@ -1,6 +1,6 @@
 package com.assignment.reportservice;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -14,7 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
 
-import com.assignment.reportservice.consumer.AccountStateChangeListener;
 import com.assignment.reportservice.util.Constants;
 import com.assignment.reportservice.util.TestUtil;
 
@@ -36,7 +35,7 @@ class ReportServiceApplicationTests {
 		CountDownLatch latch = new CountDownLatch(10);
 		template.convertAndSend(Constants.TOPIC_EXCHANGE, Constants.ROUTING_KEY, TestUtil.getAccountStateChange());
 		template.convertAndSend(Constants.TOPIC_EXCHANGE, Constants.ROUTING_KEY, TestUtil.getAccountStateChange());
-		latch.await(10L, TimeUnit.SECONDS);
+		assertThat(latch.await(10L, TimeUnit.SECONDS)).isNotNull();
 		rabbitListenerEndpointRegistry.getListenerContainer(
 	            Constants.ACCOUNT_STATE_CHANGE_LISTENER
 	    ).start();
